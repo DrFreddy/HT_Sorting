@@ -26,6 +26,9 @@ public class Ordenamientos {
 		arreglo = new int[repeticiones];
 	}
 	
+	/**
+	 * @Genera numeros aleatorios para rellenar el arreglo que se ordenara posteriormente 
+	 */
 	public int aleatorio(){
 		int num = 0;
 		Random ran = new Random();
@@ -33,6 +36,9 @@ public class Ordenamientos {
 		return num;
 	}
 	
+	/**
+	 * Llena el archivo de texto con los numeros desordenados
+	 */
 	public void generar(){
 		int cont=0;
 		for(int i=0;i<repeticiones; i++){
@@ -52,6 +58,9 @@ public class Ordenamientos {
 		
 	}
 	
+	/**
+	 * Se obtienen los datos del archivo de texto para rellenar el arreglo a ordenar
+	 */
 	public void leer(){
 		String datos="";
 		
@@ -73,6 +82,9 @@ public class Ordenamientos {
 
 	}
 	
+	/**
+	 * Ordena los numeros del arreglo mediante el metodo selection sort
+	 */
 	public void ordenSelection(){
 		int recorridos = 0;
 		int posicion = 0;
@@ -135,7 +147,7 @@ public class Ordenamientos {
 * menores a el y a la derecha números mayores a él. Se encargará de realizar el sorting para obtener
 * una lista ordenanda de los valores ingresados
 * @param izq =Posición incial de la lista/der= posición length-1 del array
-*
+**/
 	public void quickSort(int izq, int der) {
 	    int indice = partida(izq, der);
 	    if (izq < indice - 1){
@@ -163,10 +175,20 @@ public class Ordenamientos {
 		}
 	}
 	
+/**
+	 * Ordena los numeros del arreglo mediante el metodo merge sort
+	 */
 	public void ordenamientoMergeSort(){
 	        int[] tmp = new int[arreglo.length];
 	        ordenamientoMergeSort(arreglo, tmp,  0,  arreglo.length - 1);
 		}
+	/**
+	 * @param a
+	 * @param tmp
+	 * @param izquierda
+	 * @param derecho
+	 * realiza los cambios de las posiciones del arreglo
+	 */
 	private void ordenamientoMergeSort(int [ ] a, int [ ] tmp, int izquierda, int derecho){
 	        if( izquierda < derecho )
 	        {
@@ -176,6 +198,14 @@ public class Ordenamientos {
 	                merge(a, tmp, izquierda, center + 1, derecho);
 	        }
 	}
+	/**
+	 * @param a
+	 * @param tmp
+	 * @param izquierda
+	 * @param derecho
+	 * @param derechoEnd
+	 * mueve las posiciones del arreglo para ordenarlo por el metodo merge sort
+	 */
 	private void merge(int[ ] a, int[ ] tmp, int izquierda, int derecho, int derechoEnd ){
 		int izquierdaEnd = derecho - 1;
 		int k = izquierda;
@@ -197,19 +227,17 @@ public class Ordenamientos {
 		    a[derechoEnd] = tmp[derechoEnd];
 	}
 	
-	public int retornoValores(int i){
-		int val=0;
-		val=arreglo[i];
-		return val;
+	/**
+	 * @param ordenado
+	 * Imprime el arreglo ordenado por cada metodo
+	 */
+	public void imprimir(String ordenado){
+		System.out.println("El arreglo ordenado por "+ordenado+" es asi:");
+		for (int i=0; i<arreglo.length;i++){
+		    System.out.print(arreglo[i]+" "); 
+		    }
+		    System.out.println();
 	}
-
-public void imprimir(String ordenado){
-	System.out.println("El arreglo ordenado por "+ordenado+" es asi:");
-	for (int i=0; i<arreglo.length;i++){
-	    System.out.print(arreglo[i]+" "); 
-	    }
-	    System.out.println();
-}
 	
 	
 	
