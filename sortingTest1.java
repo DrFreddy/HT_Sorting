@@ -13,8 +13,9 @@ import org.junit.Test;
  * Arreglo a utilizar: 34 67 98 23 89 76 65 43 21 0
  * Orden esperado: 0 21 23 35 67 43 64 76 89 98
  */
-public class sortingTest {
-    Generador sorting= new Generador(10,9);
+public class sortingTest1 {
+
+	Ordenamientos sorting= new Ordenamientos(10,9);
     /**
      * Método: ordenSelectionTest()
      * Funcionalidad:
@@ -75,8 +76,8 @@ public class sortingTest {
     @Test
     public void mergeSort(){
     	sorting.leer();
-    	//sorting.mergeSort();
+    	sorting.ordenamientoMergeSort();
         assertEquals(0, sorting.retornoValores(0));
     	
     }
-    }
+}
