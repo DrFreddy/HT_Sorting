@@ -42,7 +42,7 @@ public class main {
 				System.out.println("Opcion no valida");
 			}
 			System.out.println();
-			System.out.println("Ingrese el tipo de ordenamiento: \n1. Selection \n2. Quick \n3. Insertion \n0. Salir");
+			System.out.println("Ingrese el tipo de ordenamiento: \n1. Selection \n2. Quick \n3. Insertion \n4. Merge \n0. Salir");
 			opcion = teclado.nextInt();
 		}
 	}
